@@ -25,7 +25,7 @@ class Solution {
      int i=0;
         while(i<nums.length)
         {
-         if (nums[i] != i + 1) 
+         if (nums[i] != i + 1) // if elements are not in correct pos example:1 2 3 4 (2)
          {
             int current=nums[i]-1;// since range from 1
             if(nums[i]!=nums[current]) //check with the value that has taken as the index
