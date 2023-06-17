@@ -11,7 +11,7 @@ Input: arr[] = {8,10,5,7,9};
 Output: 10
 Explanation: 10 is the largest element in the array. */
 
-//brute force--> TC=O(nlogn) since sorting; sc=o(1)
+//brute force--> TC=O(nlogn) since sorting; sc=o(1) method 1
 class Solution {
     static int largestElement(int[] arr, int n) {
          Arrays.sort(arr);
@@ -19,7 +19,7 @@ class Solution {
     }
 }
 
-//optimal solution --> TC=O(n) since sorting; sc=o(1)
+//optimal solution --> TC=O(n) since sorting; sc=o(1) method 2
 public class Solution {
     static int largestElement(int[] arr, int n) {
          int max = arr[0];
