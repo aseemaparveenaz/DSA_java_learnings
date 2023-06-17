@@ -1,5 +1,4 @@
 /*Problem Statement: Given an array, we have to find the largest element in the array.
-
 Examples:
 
 Example 1:
@@ -13,9 +12,22 @@ Output: 10
 Explanation: 10 is the largest element in the array. */
 
 //brute force--> TC=O(nlogn) since sorting; sc=o(1)
-public class Solution {
+class Solution {
     static int largestElement(int[] arr, int n) {
          Arrays.sort(arr);
          return arr[arr.length - 1];
+    }
+}
+
+//optimal solution --> TC=O(n) since sorting; sc=o(1)
+public class Solution {
+    static int largestElement(int[] arr, int n) {
+         int max = arr[0];
+       for (int i = 0; i < n; i++) {
+             if (max < arr[i]) {
+                  max = arr[i];
+            }
+      }
+     return max;
     }
 }
