@@ -30,12 +30,12 @@ class Solution {
             int current=nums[i]-1;// since range from 1
             if(nums[i]!=nums[current]) //check with the value that has taken as the index
             {
-                  //swaps
+                  //swaps ifnot equal that means it wasnot present beforeso not a duplicate
                 int temp=nums[i];
                 nums[i]=nums[current];
                 nums[current]=temp;
             }
-            else
+            else // if equals then it is a duplicate
                return nums[i];
          }
          else
