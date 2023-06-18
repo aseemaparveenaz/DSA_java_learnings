@@ -24,7 +24,42 @@ Constraints:
 -231 <= nums[i] <= 231 - 1
 */
 
-
+class Solution {
+    //ingone negatives since positve number missing isasked
+    public int firstMissingPositive(int[] nums) {
+         int i=0;
+       //sorting i cyclic for o(n)
+       while(i<nums.length)//traversing
+       {
+           int current=nums[i]-1;//since 1 to n numbers
+           // value of the index
+           //nth value should be ignored && value of the current index arr[i],should be compared with the value of the found index arr[current]
+           if(nums[i]>0 && nums[i]<nums.length && nums[i]!=nums[current])//ex: arr[i]=0,arr[current]=4,ie;arr[0]=4
+        //ingone negatives since positve number missing isasked
+           {
+               //swaps
+                int temp=nums[i];
+                nums[i]=nums[current];
+                nums[current]=temp;
+           }
+           else
+           {
+               i++;
+           }
+       }
+       //finding missing numbers
+       for(int index=0;index<nums.length;index++)
+       {
+           //case 1 :index and values mismatch
+           if(nums[index]!=index+1)//since 1 to n numbers
+           {
+               return index+1;
+           }
+       }
+      //case 2: n not in the list hence returning n
+      return nums.length+1; //all elemt 1to 4 in the list then 5 is the answer
+    }
+}
 
 
 
