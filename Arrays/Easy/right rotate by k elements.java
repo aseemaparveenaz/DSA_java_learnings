@@ -59,3 +59,30 @@ class Solution {
          }
     }
 }
+/* reverse optimal*/
+class Solution { 
+ static void reverse(int arr[], int start, int end) {
+        while (start <= end) {
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+    public void rotate(int[] nums, int k) {
+        //reveral
+         int n=nums.length;
+         if (n == 0) return;
+        // Get the effective number of rotations:
+       
+        k = k % n;// {1, 2, 3, 4, 5, 6, 7}
+         k=n-k;
+         if (k == 0) return;
+        reverse(nums, 0, k - 1);//2 1 ||  3 4 5 6 7
+        reverse(nums, k, n - 1);// 2 1 || 7 6 5 4 3
+        reverse(nums, 0, n - 1);
+   
+    }
+}
+ 
