@@ -59,3 +59,20 @@ class Solution {
 }
 
 
+//2 pointer approach
+// 1 1 2 2 2 3 3 --> 1 2 3 2 2 3 3
+//tc-->o(n);sc-->o(1)
+class Solution {
+    public int removeDuplicates(int[] nums) {
+     int i=0;// i in always first of array
+     for(int j=i+1;j<nums.length;j++)
+     { 
+        if(nums[j]!=nums[i]) // if non equal ele founds then 
+        {
+           nums[i+1]=nums[j];//i says takes the position in front of me and
+           i++; // i also moves on i.. therefore the last element is ihence returning i+1
+        }
+     }
+     return i+1; // note : after i+1 anything it can have
+    }
+}
