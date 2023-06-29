@@ -39,7 +39,7 @@ class Solution
 {
   static void insert(int arr[],int k)
   {
-       // Your code here
+        // Your code here
        for(int i=0;i<k-1;i++) // or i<n-1
       {
           for(int j=i+1;j>0;j--)//j starts with the next element ofi
